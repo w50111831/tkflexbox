@@ -3,6 +3,6 @@
 A python library to implement flexbox like functionality to tkinter.
 
 
-##install
+## install
 ```bash
 pip install tkflexbox
