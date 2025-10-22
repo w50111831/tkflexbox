@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import tk
+from tkinter import ttk
 
 def StrictGridFrame(parent, column=0, row=0, columnspan=1, rowspan=1):
     frame = tk.Frame(parent)
@@ -17,6 +17,10 @@ def FullPageGrid(parent, rows=10, columns=10):
 class FlexBoxFrame(tk.Frame):
     def __init__(self, parent, rows=10, columns=10):
         super().__init__(parent)
+        parent.grid_rowconfigure(0, weight=1)
+        parent.grid_columnconfigure(0, weight=1)
+
+
         self.grid(column=0, row=0, sticky="nsew")
         for i in range(rows):
             self.grid_rowconfigure(i, weight=1, uniform="grid")
