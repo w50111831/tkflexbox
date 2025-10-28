@@ -33,8 +33,22 @@ class FlexBoxFrame(tk.Frame):
         frame.grid_propagate(False)
         return frame
     
-    def place_widget(self, widget, row, column, rowspan=1, columnspan=1, relx=0, rely=0, relwidth=1, relheight=1, **kwargs):
+    def place_widget(self, widget, row, column, rowspan=1, columnspan=1, relx=0, rely=0, relwidth=1, relheight=1, margin=0, **kwargs):
+        margin = self._normalisemargin(margin)
         strictbox = self.StrictGridFrame(column=column, row=row, columnspan=columnspan, rowspan=rowspan)
         placed_widget = widget(strictbox, **kwargs)
-        placed_widget.place(relx=0, rely=0, relwidth=1, relheight=1)
+        placed_widget.place(relx=margin[3], rely=margin[0], relwidth=1-margin[1]-margin[3], relheight=1-margin[0]-margin[2])
         return placed_widget
+    
+
+    def _normalisemargin(self, margin):
+        try:
+            length = len(margin)
+            if length == 4:
+                return tuple(margin)
+            if length == 3:
+                return (margin[0], margin[1], margin[2], margin[1])
+            if length == 2:
+                return (margin[0], margin[1], margin[0], margin[1])
+        except TypeError:
+            return (margin, margin, margin, margin)
