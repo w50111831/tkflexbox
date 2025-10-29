@@ -2,6 +2,26 @@
 
 A python library to implement flexbox like functionality to tkinter.
 
+<!-- ROADMAP -->
+## Roadmap
+
+- [x] Create dynamic grid sizing engine base thing
+- [x] Add margin paremeter functionality
+- [x] Create place_widget function 
+- [ ] Add direction parameter ('row' | 'column')
+- [ ] Dynanmic wrapping to start new rows
+    - [ ] Track widget cells
+    - [ ] Track widget size
+    - [ ] Create a declarative API such as flex.add(widget, grow=2, shrink=1, basis=0.3, align='center') rather than using place_widget
+    - [ ] Recalculate layout based on window size
+    - [ ] scrolling integration if can't fit content on page
+- [ ] Alignment (justify-content / align-items)
+- [ ] Gap system (gap, row_gap, column_gap)
+- [ ] Z-index property
+
+
+
+See the [open issues](https://github.com/w50111831/tkflexbox/issues) for a full list of proposed features (and known issues).
 
 ## install
 ```bash
