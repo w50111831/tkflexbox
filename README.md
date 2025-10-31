@@ -35,7 +35,7 @@ pip install tkflexbox
 ## example usage
 ```python
 import tkflexbox
-from tkflexbox import FlexBoxFrame
+from tkflexbox import FlexBoxPage
 import tkinter as tk
 from tkinter import ttk
 
