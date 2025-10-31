@@ -1,1 +1,1 @@
-from.layout import StrictGridFrame, FullPageGrid, FlexBoxFrame
+from.layout import StrictGridFrame, FullPageGrid, FlexBoxPage
